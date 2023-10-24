@@ -63,7 +63,8 @@ def download_image(download_path, url, file_name):
         print("Success")
     except Exception as e:
         file_path = download_path + file_name
-        os.remove(file_path)
+        try:os.remove(file_path)
+        except:pass
         print('FAILED -', e)
 
 query=input()
